@@ -1,60 +1,75 @@
 // common Function for phone
-function phone(isIncreasing) {
-    let phnInput = document.getElementById('phn-inputNum');
-    let phnInputValue = phnInput.value;
+function phone(product, isIncreasing, price) {
+    let productInput = document.getElementById(product + '-inputNum');
+
+    let productInputValue = productInput.value;
+
+
 
     if (isIncreasing) {
-        phnInputValue = parseInt(phnInputValue) + 1;
+        productInputValue = parseInt(productInputValue) + 1;
     }
-    else if (phnInputValue > 0) {
-        phnInputValue = parseInt(phnInputValue) - 1;
+    else if (productInputValue > 0) {
+        productInputValue = parseInt(productInputValue) - 1;
     }
-    phnInput.value = phnInputValue;
-    // phone total calculation
-    let phoneTotal = document.getElementById('phn-total');
-    let phoneTotalValue = phoneTotal.innerText;
-    phoneTotal.innerText = phnInputValue * 1312;
-    console.log(phoneTotalValue);
+    productInput.value = productInputValue;
+    //  total calculation
+    let productTotal = document.getElementById(product + '-total');
 
+
+    productTotal.innerText = productInputValue * price;
+    // console.log(phoneTotalValue);
 }
-
-
 document.getElementById('phone-plus').addEventListener('click', function () {
-    phone(true);
+    phone("phn", true, 1312);
 
 })
 document.getElementById('phn-minus').addEventListener('click', function () {
-    phone(false);
+    phone("phn", false, 1312);
+})
+// case
+
+document.getElementById('case-plus').addEventListener('click', function () {
+    phone("case", true, 40);
+    // console.log("case clicked");
+
+})
+document.getElementById('case-minus').addEventListener('click', function () {
+    phone("case", false, 40);
 
 
 })
+
+
+
+
 // common Function for phone case
-function phonecase(isIncreasing) {
-    let phnInput = document.getElementById('case-InputNumber');
-    let phnInputValue = phnInput.value;
+// function phonecase(isIncreasing) {
+//     let caseInput = document.getElementById('case-InputNumber');
+//     let caseInputValue = caseInput.value;
 
-    if (isIncreasing) {
-        phnInputValue = parseInt(phnInputValue) + 1;
-    }
-    else if (phnInputValue > 0) {
-        phnInputValue = parseInt(phnInputValue) - 1;
-    }
-    phnInput.value = phnInputValue;
-    // phone total calculation
-    let phoneTotal = document.getElementById('case-total');
-    let phoneTotalValue = phoneTotal.innerText;
-    phoneTotal.innerText = phnInputValue * 40;
-    console.log(phoneTotalValue);
+//     if (isIncreasing) {
+//         caseInputValue = parseInt(caseInputValue) + 1;
+//     }
+//     else if (caseInputValue > 0) {
+//         caseInputValue = parseInt(caseInputValue) - 1;
+//     }
+//     caseInput.value = caseInputValue;
+//     // phone total calculation
+//     let caseTotal = document.getElementById('case-total');
+//     let caseTotalValue = caseTotal.innerText;
+//     caseTotal.innerText = caseInputValue * 40;
+//     console.log(caseTotalValue);
 
-}
-
-
-document.getElementById('phn-case-plus').addEventListener('click', function () {
-    phonecase(true);
-
-})
-document.getElementById('phn-case-minus').addEventListener('click', function () {
-    phonecase(false);
+// }
 
 
-})
+// document.getElementById('phn-case-plus').addEventListener('click', function () {
+//     phonecase(true);
+
+// })
+// document.getElementById('phn-case-minus').addEventListener('click', function () {
+//     phonecase(false);
+
+
+// })
